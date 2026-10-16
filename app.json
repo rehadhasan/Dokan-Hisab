@@ -11,6 +11,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.rehadhasan.dokanhisab",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -27,6 +28,12 @@
       "expo-sharing",
       "expo-font",
       "@react-native-community/datetimepicker"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8c75e33d-de5c-4a42-825f-5468fdc78793"
+      }
+    },
+    "owner": "engrrehad"
   }
 }
