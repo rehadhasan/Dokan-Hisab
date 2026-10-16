@@ -17,19 +17,23 @@ import type { RootStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export function RootNavigator() {
-  const { colors } = useTheme();
+export type AppFlow = 'onboarding' | 'shopform' | 'shopselect' | 'main';
+
+export function useAppFlow(): AppFlow {
   const onboardingSeen = useSettingsStore((s) => s.onboardingSeen);
   const activeShopId = useSettingsStore((s) => s.activeShopId);
   const shops = useShopStore((s) => s.shops);
 
   const hasValidActiveShop = !!activeShopId && shops.some((s) => s.id === activeShopId);
 
-  let flow: 'onboarding' | 'shopform' | 'shopselect' | 'main';
-  if (!onboardingSeen) flow = 'onboarding';
-  else if (shops.length === 0) flow = 'shopform';
-  else if (!hasValidActiveShop) flow = 'shopselect';
-  else flow = 'main';
+  if (!onboardingSeen) return 'onboarding';
+  if (shops.length === 0) return 'shopform';
+  if (!hasValidActiveShop) return 'shopselect';
+  return 'main';
+}
+
+export function RootNavigator({ flow }: { flow: AppFlow }) {
+  const { colors } = useTheme();
 
   return (
     <Stack.Navigator

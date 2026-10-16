@@ -75,6 +75,7 @@ export function ShopSelectScreen({ navigation }: Props) {
   const handleSelect = async (shopId: number) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     await setActiveShopId(shopId);
+    if (navigation.canGoBack()) navigation.goBack();
   };
 
   return (

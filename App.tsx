@@ -14,16 +14,17 @@ import {
 import { initDatabase } from '@/db/schema';
 import { useSettingsStore } from '@/store/useSettingsStore';
 import { useShopStore } from '@/store/useShopStore';
-import { RootNavigator } from '@/navigation/RootNavigator';
+import { RootNavigator, useAppFlow } from '@/navigation/RootNavigator';
 import { SplashScreen } from '@/screens/SplashScreen';
 import { useTheme } from '@/theme/useTheme';
 
 function AppShell() {
   const { isDark } = useTheme();
+  const flow = useAppFlow();
   return (
     <>
-      <NavigationContainer>
-        <RootNavigator />
+      <NavigationContainer key={flow}>
+        <RootNavigator flow={flow} />
       </NavigationContainer>
       <StatusBar style={isDark ? 'light' : 'dark'} />
     </>
