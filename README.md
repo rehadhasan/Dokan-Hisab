@@ -28,9 +28,9 @@
 
 <div align="center">
 
-### [Android APK ডাউনলোড করুন](https://github.com/rehadhasan/Dokan-Hisab/releases/latest/download/dokan-hisab.apk)
-
-[সব ভার্সন দেখুন (Releases)](https://github.com/rehadhasan/Dokan-Hisab/releases)
+<a href="https://github.com/rehadhasan/Dokan-Hisab/releases/latest/download/dokan-hisab.apk"><img src="https://img.shields.io/badge/Download-Android%20APK-0F766E?style=for-the-badge&logo=android&logoColor=white" height="56" alt="Android APK ডাউনলোড করুন" /></a>
+&nbsp;
+<a href="https://github.com/rehadhasan/Dokan-Hisab/releases"><img src="https://img.shields.io/badge/All-Releases-24292F?style=for-the-badge&logo=github&logoColor=white" height="56" alt="সব ভার্সন দেখুন" /></a>
 
 </div>
 
